@@ -31,7 +31,7 @@ from decoded_vectorize import DecodedVectorize
 client = DecodedVectorize(
     api_key=os.environ.get("DECODED_VECTORIZE_API_KEY"),  # This is the default and can be omitted
     # defaults to "production".
-    environment="environment_1",
+    environment="development",
 )
 
 response = client.vectorize.create_index(
@@ -62,7 +62,7 @@ from decoded_vectorize import AsyncDecodedVectorize
 client = AsyncDecodedVectorize(
     api_key=os.environ.get("DECODED_VECTORIZE_API_KEY"),  # This is the default and can be omitted
     # defaults to "production".
-    environment="environment_1",
+    environment="development",
 )
 
 
