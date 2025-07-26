@@ -17,7 +17,7 @@ The full API of this library can be found in [api.md](api.md).
 
 ```sh
 # install from PyPI
-pip install --pre decoded_vectorize
+pip install decoded_vectorize
 ```
 
 ## Usage
@@ -91,7 +91,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install --pre decoded_vectorize[aiohttp]
+pip install decoded_vectorize[aiohttp]
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
