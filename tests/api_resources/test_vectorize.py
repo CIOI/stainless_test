@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestVectorize:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_index(self, client: DecodedVectorize) -> None:
         vectorize = client.vectorize.create_index(
@@ -30,7 +30,7 @@ class TestVectorize:
         )
         assert_matches_type(VectorizeCreateIndexResponse, vectorize, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_index_with_all_params(self, client: DecodedVectorize) -> None:
         vectorize = client.vectorize.create_index(
@@ -44,7 +44,7 @@ class TestVectorize:
         )
         assert_matches_type(VectorizeCreateIndexResponse, vectorize, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create_index(self, client: DecodedVectorize) -> None:
         response = client.vectorize.with_raw_response.create_index(
@@ -61,7 +61,7 @@ class TestVectorize:
         vectorize = response.parse()
         assert_matches_type(VectorizeCreateIndexResponse, vectorize, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create_index(self, client: DecodedVectorize) -> None:
         with client.vectorize.with_streaming_response.create_index(
@@ -86,7 +86,7 @@ class TestAsyncVectorize:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_index(self, async_client: AsyncDecodedVectorize) -> None:
         vectorize = await async_client.vectorize.create_index(
@@ -99,7 +99,7 @@ class TestAsyncVectorize:
         )
         assert_matches_type(VectorizeCreateIndexResponse, vectorize, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_index_with_all_params(self, async_client: AsyncDecodedVectorize) -> None:
         vectorize = await async_client.vectorize.create_index(
@@ -113,7 +113,7 @@ class TestAsyncVectorize:
         )
         assert_matches_type(VectorizeCreateIndexResponse, vectorize, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create_index(self, async_client: AsyncDecodedVectorize) -> None:
         response = await async_client.vectorize.with_raw_response.create_index(
@@ -130,7 +130,7 @@ class TestAsyncVectorize:
         vectorize = await response.parse()
         assert_matches_type(VectorizeCreateIndexResponse, vectorize, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create_index(self, async_client: AsyncDecodedVectorize) -> None:
         async with async_client.vectorize.with_streaming_response.create_index(

@@ -575,7 +575,7 @@ class TestDecodedVectorize:
             client = DecodedVectorize(
                 base_url=None, api_key=api_key, _strict_response_validation=True, environment="production"
             )
-            assert str(client.base_url).startswith("https://your-cloudflare-domain.com/api/v1")
+            assert str(client.base_url).startswith("https://api.cloudflare.com/client/v4")
 
     @pytest.mark.parametrize(
         "client",
@@ -1433,7 +1433,7 @@ class TestAsyncDecodedVectorize:
             client = AsyncDecodedVectorize(
                 base_url=None, api_key=api_key, _strict_response_validation=True, environment="production"
             )
-            assert str(client.base_url).startswith("https://your-cloudflare-domain.com/api/v1")
+            assert str(client.base_url).startswith("https://api.cloudflare.com/client/v4")
 
     @pytest.mark.parametrize(
         "client",

@@ -43,8 +43,8 @@ __all__ = [
 ]
 
 ENVIRONMENTS: Dict[str, str] = {
-    "production": "https://your-cloudflare-domain.com/api/v1",
-    "environment_1": "http://localhost:3000/api/v1",
+    "production": "https://api.cloudflare.com/client/v4",
+    "development": "https://api.cloudflare.com/client/v4",
 }
 
 
@@ -56,13 +56,13 @@ class DecodedVectorize(SyncAPIClient):
     # client options
     api_key: str
 
-    _environment: Literal["production", "environment_1"] | NotGiven
+    _environment: Literal["production", "development"] | NotGiven
 
     def __init__(
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | NotGiven = NOT_GIVEN,
+        environment: Literal["production", "development"] | NotGiven = NOT_GIVEN,
         base_url: str | httpx.URL | None | NotGiven = NOT_GIVEN,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -159,7 +159,7 @@ class DecodedVectorize(SyncAPIClient):
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | None = None,
+        environment: Literal["production", "development"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.Client | None = None,
@@ -250,13 +250,13 @@ class AsyncDecodedVectorize(AsyncAPIClient):
     # client options
     api_key: str
 
-    _environment: Literal["production", "environment_1"] | NotGiven
+    _environment: Literal["production", "development"] | NotGiven
 
     def __init__(
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | NotGiven = NOT_GIVEN,
+        environment: Literal["production", "development"] | NotGiven = NOT_GIVEN,
         base_url: str | httpx.URL | None | NotGiven = NOT_GIVEN,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -353,7 +353,7 @@ class AsyncDecodedVectorize(AsyncAPIClient):
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | None = None,
+        environment: Literal["production", "development"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.AsyncClient | None = None,
